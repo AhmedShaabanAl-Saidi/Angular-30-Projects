@@ -5,6 +5,22 @@
         <p><strong>Age : </strong> {{age}}</p>
         <p><strong>Description : </strong> {{description}}</p>
 
-        <h3>Update Profile</h3>
+        <h3 class="my-2 fs-2 fw-semibold">Update Profile</h3>
+
+        <div class="input-group my-3">
+            <span class="input-group-text">New Name</span>
+            <input type="text" aria-label="name" class="form-control" placeholder="Enter New name" [(ngModel)]="name" />
+        </div>
+
+        <div class="input-group my-3">
+            <span class="input-group-text">New Age</span>
+            <input type="number" aria-label="age" class="form-control" placeholder="Enter New age" [(ngModel)]="age" />
+        </div>
+
+        <div class="input-group my-3">
+            <span class="input-group-text">New Description</span>
+            <textarea aria-label="description" class="form-control" placeholder="Enter New description"
+                [(ngModel)]="description"></textarea>
+        </div>
     </div>
 </section>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-card',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.scss',
 })
