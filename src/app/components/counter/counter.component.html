@@ -1,16 +1,25 @@
 <section class="counter">
     <div class="container">
         <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h1 class="text-center">Counter</h1>
-            <div class="card shadow-sm">
-            <div class="card-body text-center">
-                <h2>{{ count }}</h2>
-                <button (click)="increment()" class="btn btn-primary me-2">Increment</button>
-                <button (click)="decrement()" class="btn btn-secondary">Decrement</button>
+            <div class="col-md-6 offset-md-3">
+                <h1 class="text-center">Counter</h1>
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h2>{{ count }}</h2>
+                        <button (click)="increment()" class="btn btn-primary me-2">Increment</button>
+                        <button (click)="decrement()" class="btn btn-secondary">Decrement</button>
+                    </div>
+
+                    <div class="card-footer text-muted text-center">
+                        <div [ngSwitch]="GetCounterState()">
+                            <span *ngSwitchCase="'Positive'">The counter is positive.</span>
+                            <span *ngSwitchCase="'Negative'">The counter is negative.</span>
+                            <span *ngSwitchCase="'Neutral'">The counter is Neutral.</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 </section>
