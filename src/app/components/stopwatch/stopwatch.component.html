@@ -1,0 +1,18 @@
+<section class="stopwatch mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h1 class="display-4 mb-4">Stopwatch</h1>
+                        <div class="stopwatch-display mb-4">
+                            <span class="time">{{ elapsedTime | number:"1.1-1"}} Seconds </span>
+                        </div>
+                        <button class="btn btn-primary me-2" (click)="startStopwatch()">{{isRunning ? "Stop" : "Start"}}</button>
+                        <button class="btn btn-danger" (click)="reset()" [disabled]="!elapsedTime">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
