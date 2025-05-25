@@ -20,11 +20,11 @@ export class CounterComponent {
 
   GetCounterState(): string {
     if (this.count > 0) {
-      return 'Positive';
+      return 'positive';
     } else if (this.count < 0) {
-      return 'Negative';
+      return 'negative';
     } else {
-      return 'Neutral';
+      return 'neutral';
     }
   }
 }

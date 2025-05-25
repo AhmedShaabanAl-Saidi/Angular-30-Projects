@@ -12,9 +12,9 @@
 
                     <div class="card-footer text-muted text-center">
                         <div [ngSwitch]="GetCounterState()">
-                            <span *ngSwitchCase="'Positive'">The counter is positive.</span>
-                            <span *ngSwitchCase="'Negative'">The counter is negative.</span>
-                            <span *ngSwitchCase="'Neutral'">The counter is Neutral.</span>
+                            <p *ngSwitchCase="'positive'" [ngClass]="'positive'">The counter is positive.</p>
+                            <p *ngSwitchCase="'negative'" [ngClass]="'negative'">The counter is negative.</p>
+                            <p *ngSwitchCase="'neutral'" [ngClass]="'neutral'"> The counter is Neutral.</p>
                         </div>
                     </div>
 
