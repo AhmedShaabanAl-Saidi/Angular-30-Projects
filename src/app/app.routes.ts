@@ -3,11 +3,13 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HomeComponent } from './components/home/home.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { SimpleTodoComponent } from './components/simple-todo/simple-todo.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'ProfileCard', component: ProfileCardComponent },
   { path: 'counter', component: CounterComponent },
+  { path: 'simple-todo', component: SimpleTodoComponent },
   { path: '**', component: NotfoundComponent },
 ];
