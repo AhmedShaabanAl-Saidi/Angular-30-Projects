@@ -64,4 +64,14 @@ export class GuessGameComponent {
     this.feedbackMessage = '';
     this.gameOver = false;
   }
+
+  public getAlertClass(): string {
+    if (this.gameOver && this.feedbackMessage.includes('Congratulations')) {
+      return 'alert-success';
+    } else if (this.gameOver && this.feedbackMessage.includes('Game over')) {
+      return 'alert-danger';
+    } else {
+      return 'alert-warning';
+    }
+  }
 }

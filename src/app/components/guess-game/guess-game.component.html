@@ -1,1 +1,71 @@
-<p>guess-game works!</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h1 class="card-title mb-1">Number Guessing Game</h1>
+                    <p class="mb-0">Guess the secret number between 1 and 100</p>
+                </div>
+
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <div class="badge fs-6 px-3 py-2" [class]="attemptsLeft <= 3 ? 'bg-danger' : 'bg-success'">
+                            Attempts left: {{ attemptsLeft }}
+                        </div>
+                    </div>
+
+                    @if(!gameOver)
+                    {
+                    <div class="text-center mb-4">
+                        <div class="mb-3">
+                            <label for="guessInput" class="form-label fw-bold">Enter your guess:</label>
+                            <input id="guessInput" type="number" [(ngModel)]="guessedNumber" [disabled]="gameOver"
+                                min="1" max="100" placeholder="1 - 100"
+                                class="form-control form-control-lg text-center mx-auto" style="max-width: 200px;"
+                                (keyup.enter)="SubmitGuess()" />
+                        </div>
+
+                        <button class="btn btn-primary btn-lg" (click)="SubmitGuess()" [disabled]="gameOver">
+                            Submit Guess
+                        </button>
+                    </div>
+                    }
+
+                    @if (feedbackMessage) {
+                    <div class="mb-4">
+                        <div class="alert text-center" [class]="getAlertClass()" role="alert">
+                            {{ feedbackMessage }}
+                        </div>
+                    </div>
+                    }
+
+                    @if (gameOver) {
+                    <div class="text-center mb-4">
+                        <button class="btn btn-success btn-lg" (click)="ResetGame()">
+                            <i class="fa-solid fa-rotate"></i> Play Again
+                        </button>
+                    </div>
+                    }
+                </div>
+
+                <div class="card-footer bg-light">
+                    <h5 class="mb-3">How to Play:</h5>
+                    <ul>
+                        <li class="mb-2">
+                            The computer has chosen a secret number between 1 and 100
+                        </li>
+                        <li class="mb-2">
+                            You have 10 attempts to guess the correct number
+                        </li>
+                        <li class="mb-2">
+                            After each guess, you'll get a hint (higher or lower)
+                        </li>
+                        <li class="mb-0">
+                            Try to win before running out of attempts!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
